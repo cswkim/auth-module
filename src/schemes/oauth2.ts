@@ -15,6 +15,7 @@ const DEFAULTS = {
   redirectUri: null,
   logoutRedirectUri: null,
   clientId: null,
+  clientSecret: null,
   audience: null,
   grantType: null,
   responseMode: null,
@@ -329,6 +330,7 @@ export default class Oauth2Scheme extends BaseScheme<typeof DEFAULTS> {
         data: encodeQuery({
           code: parsedQuery.code,
           client_id: this.options.clientId,
+          client_secret: this.options.clientSecret,
           redirect_uri: this._redirectURI,
           response_type: this.options.responseType,
           audience: this.options.audience,
